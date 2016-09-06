@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+using System;
 
 namespace DesignPattern
 {
@@ -10,6 +7,22 @@ namespace DesignPattern
     {
         static void Main(string[] args)
         {
+            //Singleton Pattern
+            SingletonData singletonData = SingletonData.Instance();
+            SingletonData singletonData2 = SingletonData.Instance();
+
+            //Factory Pattern
+            var position = Factory.Get(1);
+            Console.WriteLine(position.Title);
+
+
+            //Facade Pattern
+            var shapeCreator = new ShapeCreatorFacade();
+            shapeCreator.DrawCircle();
+            shapeCreator.DrawRectangle();
+            shapeCreator.DrawSquare();
+
+            Console.ReadKey();
         }
     }
 }
