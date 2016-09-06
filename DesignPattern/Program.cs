@@ -7,6 +7,11 @@ namespace DesignPattern
     {
         static void Main(string[] args)
         {
+            //Builder Pattern
+            Director director = new Director();
+            IBuilder builderA = new BuilderA();
+            director.Constractor(builderA);
+
             //Singleton Pattern
             SingletonData singletonData = SingletonData.Instance();
             SingletonData singletonData2 = SingletonData.Instance();
